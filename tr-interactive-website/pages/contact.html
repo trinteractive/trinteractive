@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactez Team Rouge Interactive</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Navbar content -->
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-form">
+            <h1>Contactez-nous</h1>
+            <form id="contact-form" action="https://formspree.io/f/TRInteractive@outlook.fr" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom Complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Votre Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Envoyer le Message</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Informations de Contact</h2>
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> Email : <a href="mailto:TRInteractive@outlook.fr">TRInteractive@outlook.fr</a></p>
+                <p><i class="fab fa-discord"></i> Discord : <a href="https://discord.gg/7XtH5NuaG4" target="_blank">Rejoignez notre serveur</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2025 Team Rouge Interactive. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/7XtH5NuaG4" target="_blank" class="discord-link">
+                    <i class="fab fa-discord"></i> Rejoignez notre Discord
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Récupérer les valeurs du formulaire
+                const formData = new FormData(contactForm);
+                const formObject = Object.fromEntries(formData.entries());
+                
+                // Validation simple
+                if (!formObject.name || !formObject.email || !formObject.subject || !formObject.message) {
+                    alert('Veuillez remplir tous les champs');
+                    return;
+                }
+                
+                // Simuler l'envoi du formulaire
+                const notification = document.createElement('div');
+                notification.classList.add('cart-notification');
+                notification.innerHTML = `
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Message envoyé avec succès !</span>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Supprimer la notification
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 3500);
+            });
+        });
+    </script>
+
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-details {
+            margin-top: 20px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        .contact-details a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+
+        .contact-details a:hover {
+            color: #23527c;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* ÉQUIPE */
+Développeur Principal: [Votre Nom]
+Site: https://trinteractive.com
+Twitter: @TRInteractive
+Discord: https://discord.gg/7XtH5NuaG4
+Email: TRInteractive@outlook.fr
+
+/* TECHNOLOGIES */
+Standards: HTML5, CSS3, JavaScript
+Composants: Font Awesome, Inter Font
+
+/* SITE */
+Dernière mise à jour: 2025-01-11
+Langues: Français
+Compatibilité: Chrome, Firefox, Safari, Edge
+
+/* REMERCIEMENTS */
+Merci à tous nos supporters et à la communauté gaming

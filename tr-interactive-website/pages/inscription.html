@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Team Rouge Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <img src="../assets/images/logo.png" alt="TR Interactive Logo" class="logo">
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="dynamic-text">Accueil</a></li>
+                <li><a href="products.html" class="dynamic-text">Jeux</a></li>
+                <li><a href="cart.html" class="dynamic-text">Panier</a></li>
+                <li><a href="subscriptions.html" class="dynamic-text">Abonnements</a></li>
+                <li><a href="customer-space.html" class="dynamic-text">Espace Client</a></li>
+                <li><a href="tr-coins-shop.html" class="dynamic-text">TR Coins</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Créez votre <strong>Compte</strong></h1>
+                <p>Rejoignez la communauté Team Rouge Interactive</p>
+            </div>
+        </section>
+
+        <section class="inscription-form">
+            <h2 class="section-title">Formulaire <strong>d'Inscription</strong></h2>
+            <form id="inscription-form" class="form-grid">
+                <div class="form-group">
+                    <label for="prenom">Prénom <strong>*</strong></label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom <strong>*</strong></label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="email">Adresse Email <strong>*</strong></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="password">Mot de Passe <strong>*</strong></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="confirm-password">Confirmation du Mot de Passe <strong>*</strong></label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                    <label for="privacy-policy">J'ai lu et j'accepte la <a href="politique-confidentialite.html">politique de confidentialité</a></label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="promo-consent" name="promo-consent">
+                    <label for="promo-consent">Je souhaite recevoir des offres promotionnelles</label>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn btn-primary">Créer mon <strong>Compte</strong></button>
+                </div>
+            </form>
+        </section>
+
+        <section class="navigation-section">
+            <h2 class="section-title">Accès <strong>Rapide</strong></h2>
+            <div id="navigation-icons" class="icon-grid">
+                <!-- Les icônes de navigation seront générées dynamiquement par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Team Rouge Interactive. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #chatbot-container {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        padding: 50px 10px;
+    }
+
+    #chatbot-container {
+        width: 95%;
+        right: 2.5%;
+    }
+}

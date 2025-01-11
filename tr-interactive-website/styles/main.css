@@ -1,0 +1,998 @@
+/* Design système TR Interactive - Version Ultime */
+:root {
+    /* Team Rouge Color Palette */
+    --color-primary: #D32F2F;      /* Deep Red */
+    --color-white: #FFFFFF;        /* White */
+    --color-black: #000000;        /* Black */
+    --color-silver: #C0C0C0;       /* Silver Gray */
+    --color-background: #F4F4F4;   /* Light Gray Background */
+    
+    /* Typographie */
+    --font-primary: 'Inter', sans-serif;
+    
+    /* Effets et transitions */
+    --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* Mode sombre dynamique */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #0A0A0A;
+        --color-text-primary: #FFFFFF;
+        --color-text-secondary: #E0E0E0;
+        --color-sidebar-bg: rgba(26, 26, 26, 0.95);
+        --color-sidebar-text: #FFFFFF;
+    }
+}
+
+/* Reset et base universelle */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-black);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: var(--transition-smooth);
+}
+
+/* Navigation latérale - Design révolutionnaire */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    position: static;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--color-sidebar-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    height: 50px;
+    max-width: 200px;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-primary);
+    margin: 3px 0;
+    transition: var(--transition-smooth);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-sidebar-text);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.02);
+    opacity: 0;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+    z-index: -1;
+}
+
+.nav-menu a:hover::before {
+    opacity: 1;
+}
+
+.nav-menu a.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-black) 100%);
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+/* Boutons - Design ultime */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #FF5252;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Styles pour les éléments désactivés et contrôle d'accès */
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.access-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.access-overlay .overlay-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.access-overlay .overlay-content i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.access-overlay .overlay-content p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.access-overlay .btn-login-redirect {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.access-overlay .btn-login-redirect:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Sections de jeux et actions */
+.featured-games, .featured-actions {
+    padding: 50px 5%;
+    background: var(--color-background);
+}
+
+.featured-games {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-grid, .action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+.game-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.game-card-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.game-card-content {
+    flex-grow: 1;
+}
+
+.game-card-content h3 {
+    margin-top: 0;
+    color: var(--color-primary-dark);
+}
+
+.game-card-content p {
+    margin-bottom: 10px;
+}
+
+.game-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-card-price {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.game-details h4 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.game-details h5 {
+    color: #2c3e50;
+    margin-top: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.territories {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.territory-group {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.territory-group h6 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.territory-group ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.territory-group ul li {
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.territory-group ul li:last-child {
+    border-bottom: none;
+}
+
+.platform-info {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.platform-info i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .game-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-card-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .game-card-actions {
+        justify-content: center;
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Animations et interactions */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Scroll Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: var(--color-sidebar-bg);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.discord-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #5865F2;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.discord-link:hover {
+    background-color: #4752C4;
+}
+
+.discord-link i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive et accessibilité */
+@media screen and (max-width: 1024px) {
+    .game-grid, .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .game-grid, .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Styles pour la page TR Coins Shop */
+.tr-coins-shop .hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+}
+
+.tr-coins-shop .hero h1 {
+    color: #ff4500;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.coins-packages {
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.package-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.package-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.package-card.highlighted {
+    border-color: #ff4500;
+    background-color: #fff5f0;
+}
+
+.package-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.package-card .coin-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4500;
+    margin-bottom: 1rem;
+}
+
+.package-card .price {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.package-card .bonus {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.package-card .buy-btn {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.package-card .buy-btn:hover {
+    background-color: #ff6347;
+}
+
+.coins-info {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+}
+
+.coins-info h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.coins-info ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.coins-info ul li {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Styles pour les abonnements */
+.subscriptions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.subscription-card {
+    flex: 1;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.subscription-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--color-primary);
+}
+
+.subscription-card h2 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.subscription-card .price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-black);
+    margin-bottom: 20px;
+}
+
+.subscription-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.subscription-card ul li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.subscription-card ul li:last-child {
+    border-bottom: none;
+}
+
+.subscription-card .btn-primary {
+    align-self: center;
+    margin-top: auto;
+}
+
+.subscription-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Styles pour les icônes */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition-smooth);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-card i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    transition: var(--transition-smooth);
+}
+
+.icon-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-black);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.icon-card p {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 15px;
+}
+
+.icon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: var(--color-primary);
+    transition: var(--transition-smooth);
+}
+
+.icon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.icon-card:hover::before {
+    left: 0;
+}
+
+.icon-card:hover i {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+.icon-card.active {
+    background-color: rgba(211, 47, 47, 0.05);
+    border: 1px solid var(--color-primary);
+}
+
+.icon-card.active::before {
+    left: 0;
+}
+
+.icon-card.active i {
+    color: var(--color-primary);
+}
+
+/* Styles de notification */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.notification {
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.notification-success {
+    background-color: var(--color-primary);
+}
+
+.notification-error {
+    background-color: #d32f2f;
+}
+
+.notification-info {
+    background-color: #1976d2;
+}
+
+.notification.fade-out {
+    opacity: 0;
+}
+
+/* Styles pour les éléments authentifiés/non authentifiés */
+.authenticated-content {
+    display: none;
+}
+
+.unauthenticated-content {
+    display: block;
+}
+
+/* Styles pour les TR Coins */
+.tr-coins-menu-item {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.tr-coins-menu-item i {
+    margin-right: 5px;
+    color: gold;
+}
+
+.tr-coins-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.tr-coins-balance i {
+    font-size: 1.5rem;
+    color: gold;
+    margin-right: 10px;
+}
+
+.tr-coins-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tr-coins-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tr-coins-actions .btn i {
+    margin-right: 5px;
+}
+
+/* Responsive design pour les TR Coins */
+@media (max-width: 768px) {
+    .tr-coins-actions {
+        flex-direction: column;
+    }
+}
+
+/* Styles pour les notifications d'ajout au panier */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 3s forwards;
+    opacity: 1;
+}
+
+.cart-notification i {
+    font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* Styles pour l'avertissement de paiement */
+.payment-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.payment-warning .alert-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-warning i {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #856404;
+}
+
+/* Styles pour les jeux en développement */
+.game-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-card.in-development {
+    background-color: #f8f9fa;
+    border: 2px dashed #6c757d;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game-card img {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.game-info {
+    flex-grow: 1;
+}
+
+.development-status {
+    color: #6c757d;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.development-status i {
+    margin-right: 10px;
+    color: #ffc107;
+}
+
+.game-details p {
+    margin-bottom: 15px;
+}
+
+.game-features {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #495057;
+}
+
+/* Ajustement pour la bannière de paiement */
+#payment-warning {
+    display: none;
+}
+
+nav {
+    position: static;
+    top: 0;
+    z-index: 999;
+}
+
+/* Bannière d'avertissement */
+.warning-banner {
+    background-color: #ffcc00;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    width: 100%;
+}

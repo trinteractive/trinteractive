@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Rouge Interactive - Votre Univers Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <img src="assets/images/logo.png" alt="TR Interactive Logo" class="logo">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="dynamic-text active">Accueil</a></li>
+                <li><a href="pages/products.html" class="dynamic-text">Jeux</a></li>
+                <li><a href="pages/boutique.html" class="dynamic-text">Boutique</a></li>
+                <li><a href="pages/cart.html" class="dynamic-text">Panier</a></li>
+                <li><a href="pages/subscriptions.html" class="dynamic-text">Abonnements</a></li>
+                <li><a href="pages/customer-space.html" class="dynamic-text auth-required">Espace Client</a></li>
+                <li class="tr-coins-menu-item">
+                    <a href="pages/tr-coins-shop.html" class="dynamic-text">
+                        <i class="fas fa-coins"></i> TR Coins
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue sur <strong>Team Rouge Interactive</strong></h1>
+                <p>Votre univers gaming ultime</p>
+                <a href="pages/products.html" class="btn btn-primary btn-icon btn-pulse hover-lift">
+                    <i class="fas fa-gamepad"></i> Découvrir les Jeux
+                </a>
+            </div>
+        </section>
+
+        <section class="featured-games">
+            <h2 class="section-title">Jeux <strong>Populaires</strong></h2>
+            <div class="game-grid" id="featured-games">
+                <!-- Les jeux seront chargés dynamiquement -->
+            </div>
+        </section>
+
+        <section class="featured-actions">
+            <h2 class="section-title">Nos <strong>Services</strong></h2>
+            <div class="action-grid">
+                <div class="action-card hover-lift">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Jeux</h3>
+                    <p>Découvrez notre catalogue</p>
+                    <a href="pages/products.html" class="btn btn-secondary">Voir Plus</a>
+                </div>
+                <div class="action-card hover-lift">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Abonnements</h3>
+                    <p>Choisissez votre formule</p>
+                    <a href="pages/subscriptions.html" class="btn btn-secondary">Explorer</a>
+                </div>
+                <div class="action-card hover-lift">
+                    <i class="fas fa-coins"></i>
+                    <h3>TR Coins</h3>
+                    <p>Boostez votre expérience</p>
+                    <a href="pages/tr-coins-shop.html" class="btn btn-secondary">Acheter</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="navigation-section">
+            <h2 class="section-title">Accès <strong>Rapide</strong></h2>
+            <div id="navigation-icons" class="icon-grid">
+                <!-- Les icônes de navigation seront générées dynamiquement par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 TR Interactive. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/7XtH5NuaG4" target="_blank" class="discord-link">
+                    <i class="fab fa-discord"></i> Rejoignez notre Discord
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

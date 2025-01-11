@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique de Jeux - TR Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <img src="../assets/images/logo.png" alt="TR Interactive Logo" class="logo">
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="dynamic-text">Accueil</a></li>
+                <li><a href="products.html" class="dynamic-text active">Boutique</a></li>
+                <li><a href="cart.html" class="dynamic-text">Panier</a></li>
+                <li><a href="customer-space.html" class="dynamic-text">Espace Client</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products-container">
+        <section class="payment-warning">
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Désolé, le service de paiement est actuellement inactif. Nous travaillons à résoudre ce problème. Merci de votre patience.</p>
+            </div>
+        </section>
+
+        <section class="game-grid">
+            <div class="game-card in-development">
+                <img src="../assets/images/frontier-unbound.jpg" alt="Frontier Unbound">
+                <div class="game-info">
+                    <h3>Frontier Unbound</h3>
+                    <p class="development-status">
+                        <i class="fas fa-hammer"></i> En Développement
+                    </p>
+                    <div class="game-details">
+                        <h4>𝙁𝙧𝙤𝙣𝙩𝙞𝙚𝙧𝙨 𝙐𝙣𝙗𝙤𝙪𝙣𝙙</h4>
+                        <p>Un jeu roleplay immersif où la réalité rencontre la simulation !</p>
+                        
+                        <h5>Concept Principal</h5>
+                        <p>Devenez le professionnel que vous avez toujours rêvé d'être :</p>
+                        <ul class="game-features">
+                            <li>Sapeurs-pompiers</li>
+                            <li>Gendarmes</li>
+                            <li>EDF</li>
+                            <li>Et bien d'autres métiers passionnants</li>
+                        </ul>
+
+                        <h5>Environnements</h5>
+                        <p>Explorez des environnements variés et réalistes :</p>
+                        <ul class="game-features">
+                            <li>Forêts détaillées</li>
+                            <li>Villes authentiques</li>
+                            <li>Espaces urbains et ruraux</li>
+                        </ul>
+
+                        <h5>Territoires</h5>
+                        <p>Découvrez des villes réalistes en France et en Suisse :</p>
+                        <div class="territories">
+                            <div class="territory-group">
+                                <h6>France</h6>
+                                <ul>
+                                    <li>Toulon</li>
+                                    <li>Paris</li>
+                                    <li>Lyon</li>
+                                </ul>
+                            </div>
+                            <div class="territory-group">
+                                <h6>Suisse</h6>
+                                <ul>
+                                    <li>Genève</li>
+                                    <li>Lausanne</li>
+                                    <li>Berne</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h5>Plateforme</h5>
+                        <p class="platform-info">
+                            <i class="fas fa-desktop"></i> Disponible uniquement sur PC
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2025 TR Interactive. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/7XtH5NuaG4" target="_blank" class="discord-link">
+                    <i class="fab fa-discord"></i> Rejoignez notre Discord
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/products.js"></script>
+    <script src="../scripts/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - TR Interactive</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../assets/images/logo.png" alt="TR Interactive Logo">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="products.html">Jeux</a></li>
+                <li><a href="cart.html">Panier</a></li>
+                <li><a href="subscriptions.html">Abonnements</a></li>
+                <li><a href="customer-space.html">Espace Client</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Votre Panier</h1>
+                <p>Vérifiez vos articles avant l'achat</p>
+            </div>
+        </section>
+
+        <div class="warning-banner">
+            ⚠️ Service de paiement temporairement indisponible
+        </div>
+
+        <section class="cart-container">
+            <div class="cart-items" id="cart-items">
+                <!-- Les articles du panier seront générés dynamiquement -->
+            </div>
+            
+            <div class="cart-summary">
+                <h2>Résumé de la Commande</h2>
+                <p>Total: <span id="cart-total">0 €</span></p>
+                <button class="btn btn-primary" id="checkout-btn" disabled>
+                    <i class="fas fa-lock"></i> Procéder au Paiement
+                </button>
+            </div>
+
+            <div class="refund-policy">
+                <h3>📋 Politique de Remboursement</h3>
+                <div class="policy-details">
+                    <p><strong>🕒 Délai de Rétractation :</strong> 14 jours à compter de la date d'achat</p>
+                    <p><strong>🎮 Jeux Numériques :</strong> Remboursement possible si moins de 2h de jeu</p>
+                    <p><strong>🔄 Abonnements :</strong> Remboursement au prorata pour les abonnements non utilisés</p>
+                    <p><strong>🛡️ Conditions :</strong></p>
+                    <ul>
+                        <li>Produit non téléchargé ou non activé</li>
+                        <li>État original du produit conservé</li>
+                        <li>Preuve d'achat requise</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary" id="full-policy-btn">Voir la Politique Complète</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="login-required-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Connexion Requise</h2>
+                <p>Vous devez être connecté pour procéder au paiement.</p>
+                <div class="modal-actions">
+                    <a href="login.html" class="btn btn-primary">Se Connecter</a>
+                    <button class="btn btn-secondary close-modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2025 TR Interactive. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/7XtH5NuaG4" target="_blank" class="discord-link">
+                    <i class="fab fa-discord"></i> Rejoignez notre Discord
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/cart.js"></script>
+</body>
+</html>

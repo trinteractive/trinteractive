@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Admin - TR Interactive</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../assets/images/logo.png" alt="TR Interactive Logo">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#" id="manage-games">Gérer les Jeux</a></li>
+                <li><a href="#" id="manage-news">Gérer les Actualités</a></li>
+                <li><a href="#" id="manage-users">Utilisateurs</a></li>
+                <li><a href="#" id="logout">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-dashboard">
+        <section id="dashboard-content">
+            <h1>Tableau de Bord <strong>Administrateur</strong></h1>
+            
+            <div class="admin-sections">
+                <div class="admin-section">
+                    <h2>Jeux</h2>
+                    <p>Nombre total de jeux : <span id="total-games">15</span></p>
+                    <button class="btn" id="add-game">Ajouter un Jeu</button>
+                </div>
+
+                <div class="admin-section">
+                    <h2>Actualités</h2>
+                    <p>Dernière actualité : <span id="last-news">Mise à jour de God of War</span></p>
+                    <button class="btn" id="add-news">Créer une Actualité</button>
+                </div>
+
+                <div class="admin-section">
+                    <h2>Utilisateurs</h2>
+                    <p>Nombre total d'utilisateurs : <span id="total-users">1250</span></p>
+                    <button class="btn" id="user-management">Gérer les Utilisateurs</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TR Interactive. Espace Administrateur</p>
+    </footer>
+
+    <script src="../scripts/admin-dashboard.js"></script>
+</body>
+</html>

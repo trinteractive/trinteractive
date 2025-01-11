@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /pages/login.html
+Disallow: /scripts/
+Disallow: /admin/
+
+Allow: /
+Allow: /pages/
+Allow: /index.html
+
+Sitemap: https://www.trinteractive.com/sitemap.xml
+
+# Règles spécifiques pour les moteurs de recherche
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Temps de crawl
+Crawl-delay: 10

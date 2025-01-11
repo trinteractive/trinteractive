@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TR Interactive - Tableau de Bord Admin</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <h1>Tableau de Bord Administrateur</h1>
+        
+        <section id="product-management">
+            <h2>Gestion des Produits</h2>
+            <form id="add-product-form">
+                <input type="text" placeholder="Nom du produit" required>
+                <input type="number" placeholder="Prix" required>
+                <textarea placeholder="Description"></textarea>
+                <input type="file" accept="image/*">
+                <button type="submit">Ajouter Produit</button>
+            </form>
+        </section>
+
+        <section id="site-configuration">
+            <h2>Configuration du Site</h2>
+            <form id="site-config-form">
+                <input type="text" placeholder="Titre du site">
+                <textarea placeholder="Description du site"></textarea>
+                <input type="color" placeholder="Couleur principale">
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

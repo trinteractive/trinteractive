@@ -1,0 +1,21 @@
+{
+    "name": "TR Interactive",
+    "short_name": "TR Interactive",
+    "description": "Découvrez Frontier Unbound, le jeu de science-fiction épique en développement",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "/assets/images/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon-32x32.png", 
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}
